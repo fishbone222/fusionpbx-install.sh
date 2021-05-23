@@ -33,6 +33,7 @@ fi
 
 #add the cache directory
 mkdir -p /var/cache/fusionpbx
+useradd freeswitch -m
 chown -R freeswitch:daemon /var/cache/fusionpbx
 
 #get the source code
