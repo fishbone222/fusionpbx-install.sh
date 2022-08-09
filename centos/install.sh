@@ -22,11 +22,34 @@ dnf -y install chrony yum-utils net-tools epel-release htop vim openssl
 # Disable SELinux
 resources/selinux.sh
 
+read -n1 -p "Postgresql[1] or mysql[2] ?" sql
+case $sql in
+  p|P|1) sql=pgsql;;
+  m|M|2) sql=mysql;;
+  *)  sql=mysql;;
+esac
+echo ""
+echo "You selected: $sql"
+echo ""
+
 #FusionPBX
 resources/fusionpbx.sh
 
+if [ "$sql" == "pgsql" ]; then
+  #dnf module enable postgresql:13 -y
+  #dnf install postgresql-server php-pgsql -y
+  #postgresql-setup --initdb
+  #sed -i s/ident/md5/ /var/lib/pgsql/data/pg_hba.conf
+  #systemctl enable --now postgresql
+  
 #Postgres
 resources/postgresql.sh
+fi
+if [ "$sql" == "mysql" ]; then
+  dnf install mariadb-server php-mysqlnd -y
+  systemctl enable --now mariadb
+  mysql_secure_installation
+fi
 
 #NGINX web server
 resources/sslcert.sh
