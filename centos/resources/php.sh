@@ -20,7 +20,7 @@ dnf module enable php:7.2
 #dnf install -y php-imap 
 
 #install dependencies
-dnf -y install php-fpm php-gd php-pgsql php-odbc php-curl php-opcache php-common php-pdo php-soap php-xml php-xmlrpc php-cli php-gd
+dnf -y install php-fpm php-gd php-pgsql php-odbc php-curl php-opcache php-common php-pdo php-soap php-xml php-xmlrpc php-cli php-gd php-json
 
 #send a message
 verbose "Configuring php/nginx/php-fpm and permissions"
