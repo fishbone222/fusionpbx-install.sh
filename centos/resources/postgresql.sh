@@ -14,7 +14,7 @@ verbose "Installing PostgreSQL"
 password=$(dd if=/dev/urandom bs=1 count=20 2>/dev/null | base64)
 
 # Install the repository
-sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+#sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 # Install PostgreSQL:
 sudo yum install -y postgresql14-server postgresql14-contrib postgresql14 postgresql14-libs
