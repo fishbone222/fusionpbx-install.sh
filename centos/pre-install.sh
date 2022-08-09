@@ -1,7 +1,8 @@
 #!/bin/sh
 
 #install git
-yum -y install git
+dnf -y install git
+dnf config-manager --set-enabled powertools -y
 
 #get the install script
 cd /usr/src && git clone https://github.com/fusionpbx/fusionpbx-install.sh.git
