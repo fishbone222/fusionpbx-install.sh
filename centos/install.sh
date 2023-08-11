@@ -22,11 +22,11 @@ dnf -y install chrony yum-utils net-tools epel-release htop vim openssl
 # Disable SELinux
 resources/selinux.sh
 
-read -n1 -p "Postgresql[1] or mysql[2] ?" sql
+read -n1 -p "Postgresql[1] or mysql[2] (beta) ?" sql
 case $sql in
   p|P|1) sql=pgsql;;
   m|M|2) sql=mysql;;
-  *)  sql=mysql;;
+  *)  sql=pgsql;;
 esac
 echo ""
 echo "You selected: $sql"
