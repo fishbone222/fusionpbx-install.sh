@@ -36,7 +36,7 @@ echo ""
 resources/fusionpbx.sh
 
 if [ "$sql" == "pgsql" ]; then
-  #dnf module enable postgresql:13 -y
+  #dnf module enable postgresql:15 -y
   #dnf install postgresql-server php-pgsql -y
   #postgresql-setup --initdb
   #sed -i s/ident/md5/ /var/lib/pgsql/data/pg_hba.conf
