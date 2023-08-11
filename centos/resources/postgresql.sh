@@ -25,7 +25,7 @@ verbose "Initalize PostgreSQL database"
 #initialize the database
 sudo /usr/bin/postgresql-setup initdb
 sudo systemctl enable postgresql
-sudo systemctl start postgresql
+#sudo systemctl start postgresql
 
 #allow loopback
 sed -i 's/\(host  *all  *all  *127.0.0.1\/32  *\)ident/\1md5/' /var/lib/pgsql/data/pg_hba.conf
@@ -33,7 +33,9 @@ sed -i 's/\(host  *all  *all  *::1\/128  *\)ident/\1md5/' /var/lib/pgsql/data/pg
 
 #systemd
 systemctl daemon-reload
-systemctl restart postgresql
+#systemctl restart postgresql
+sudo systemctl start postgresql
+
 
 #move to /tmp to prevent a red herring error when running sudo with psql
 cwd=$(pwd)
