@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# CentOS 7 install
+# CentOS 8 install
 
 #move to script directory so all relative paths work
 cd "$(dirname "$0")"
